@@ -1,0 +1,16 @@
+.btns{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+}
+
+
+.btn{
+    width: 50%;
+}
+
+button{
+    width: 100%;
+    background-color: rgb(228, 47, 47);
+}

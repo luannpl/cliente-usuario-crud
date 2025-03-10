@@ -85,8 +85,10 @@ const Usuarios = () => {
     <>
       {text === "home" && (
         <>
+        <div className={styles.btnHome}>
           <button onClick={cadastrarUsuario}>Cadastrar Usuario</button>
           <button onClick={listarUsuario}>Listar Usuario</button>
+        </div>
         </>
       )}
 
@@ -140,16 +142,30 @@ const Usuarios = () => {
 
       {text === "listar" && loading ? (
         <>
-          <p>Carregando...</p>
+          <div class={styles.customloader}></div>
         </>
       ) : text === "listar" && !loading ? (
-        <ol>
-          {data.map((dados) => (
-            <li key={dados.id}>
-              {dados.name} - {dados.email}
-            </li>
-          ))}
-        </ol>
+        <>
+        <h1>Lista de usuários</h1>
+          <table className={styles.tabela}>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+              </tr>
+            </thead>
+            <tbody>
+                {data.map((dados) =>(
+                  <tr key={dados.id}>
+                  <td>{dados.id}</td>
+                  <td>{dados.name}</td>
+                  <td>{dados.email}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+          </>
       ) : null}
     </>
   );

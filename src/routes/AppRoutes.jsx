@@ -6,7 +6,7 @@ import Clientes from "../pages/Clientes/Clientes";
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route index element={<Home />} />
       <Route path="/users" element={<Usuarios />} />
       <Route path="/clientes" element={<Clientes />} />
     </Routes>
